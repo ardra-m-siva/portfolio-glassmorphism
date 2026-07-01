@@ -1,0 +1,19 @@
+/* main conatainer div */
+.main-container {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "'Inter',sans-serif";
+}
+
+/* navbar */
+.main-nav {
+    background-color: rgba(8, 12, 16, 0.8);
+    border-bottom: 1px solid var(--border);
+    animation: fadeSlideDown .5s ease;
+    backdrop-filter: blur(20px);
+}
+
+.nav-logo{
+    box-shadow: 0 0 16px rgba(16, 185, 129, .4);
+    background: linear-gradient(135deg, var(--em), var(--cy));
+}
