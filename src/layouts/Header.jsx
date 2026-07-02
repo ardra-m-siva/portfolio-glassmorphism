@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { navItems } from '../utils/SectionHead';
+import { goTo, navItems } from '../utils/utilityFunctions';
 
 const Header = ({ activeNav, setActiveNav }) => {
-    const goTo = id => document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
 
     return (
         <nav className='fixed top-0 right-0 left-0 z-200 main-nav'>

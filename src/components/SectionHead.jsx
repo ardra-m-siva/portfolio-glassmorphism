@@ -1,6 +1,8 @@
-import Reveal from "../components/Reveal";
-import { COLOURS as C } from "../constants/colors";
-export function SH({ label, title, accent = C.em, sub }) {
+import React from 'react'
+import Reveal from './Reveal';
+import { COLOURS as C } from '../constants/colors';
+
+const SectionHead = ({ label, title, accent = C.em, sub }) => {
     return <Reveal>
         <div className='mb-8 sm:mb-12'>
             <div className='inline-flex items-center gap-2 rounded-full mb-4 py-1.25 px-4' style={{ background: C.emSoft, border: `1px solid rgba(16,185,129,.2)` }}>
@@ -13,14 +15,4 @@ export function SH({ label, title, accent = C.em, sub }) {
     </Reveal>;
 }
 
-export const glassCard = (accent = "transparent") => ({
-    background: C.glassHi,
-    backdropFilter: "blur(20px)",
-    WebkitBackdropFilter: "blur(20px)",
-    border: `1px solid ${C.border}`,
-    borderRadius: 20,
-    position: "relative",
-    overflow: "hidden",
-});
-
-export const navItems = ["Home", "About", "Skills", "Projects", "Timeline", "GitHub", "Contact"];
+export default SectionHead

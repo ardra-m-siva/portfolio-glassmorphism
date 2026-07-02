@@ -57,7 +57,7 @@ I'm a Full Stack Developer with experience building modern web applications usin
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=ardra-m-siva&theme=transparent)
 
-![React](https://img.shields.io/badge/React-20232A?logo=react)
-![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb)
-![Express.js](https://img.shields.io/badge/MongoDB-47A248?logo=express.js)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=000000)
+![Node.js](https://img.shields.io/badge/Node.js-5FA04E?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)

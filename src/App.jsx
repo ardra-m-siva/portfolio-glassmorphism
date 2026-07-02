@@ -5,7 +5,7 @@ import { COLOURS as C } from './constants/colors'
 import { useInView } from './hooks/useInView';
 import Reveal from './components/Reveal';
 import TiltCard from './components/TiltCard';
-import Photo from './assets/ardra.png'
+import Photo from './assets/ardra-img.png'
 import About from './layouts/About';
 import Skills from './layouts/Skills';
 import Projects from './layouts/Projects';
@@ -14,7 +14,7 @@ import GitHub from './layouts/GitHub';
 import Contact from './layouts/Contact';
 import Footer from './layouts/Footer';
 import Header from './layouts/Header';
-import { glassCard, navItems } from './utils/SectionHead';
+import { glassCard, goTo, navItems } from './utils/utilityFunctions';
 import Typewriter from './components/Typewriter';
 import { useScroll } from './hooks/useScroll';
 
@@ -98,7 +98,6 @@ function App() {
         <div className='relative z-1 mx-auto w-full max-w-275 pt-12 md:pr-6 pb-20'>
           {/* TOP ROW — intro text + avatar bento */}
           <div className='grid mb-5 gap-5 grid-cols-1 md:grid-cols-[1fr_380px]'>
-
             {/* Main intro card */}
             <Reveal delay={0}>
               <TiltCard intensity={8} style={{ ...glassCard(), border: `1px solid ${C.border}`, animation: "bentoIn .7s ease both" }} className='h-full rounded-3xl pt-11 pb-9 px-11'>
@@ -111,8 +110,7 @@ function App() {
                 </div>
 
                 <h1 className='font-black mb-4.5 tracking-[-1px] leading-[1.05]' style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: "clamp(36px,5.5vw,62px)" }}>
-                  Hi, I'm<br />
-                  <span className="shimmer-em">Ardra M S</span>
+                  Hi, I'm<br /><span className="shimmer-em">Ardra M S</span>
                 </h1>
 
                 <div className='min-h-8 mb-6' style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "clamp(15px,2vw,20px)", color: C.muted }}>
@@ -125,8 +123,8 @@ function App() {
                 </p>
 
                 <div className='flex flex-wrap gap-3'>
-                  <button className="glow-em" onClick={() => go("Projects")}>View My Work <i className="fa-solid fa-arrow-right"></i></button>
-                  <button className="ghost-btn" onClick={() => go("Contact")}>Let's Talk</button>
+                  <button className="glow-em" onClick={() => goTo("projects")}>View My Work <i className="fa-solid fa-arrow-right"></i></button>
+                  <button className="ghost-btn" onClick={() => goTo("contact")}>Let's Talk</button>
                 </div>
               </TiltCard>
             </Reveal>

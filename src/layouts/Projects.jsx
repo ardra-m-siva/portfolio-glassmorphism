@@ -1,8 +1,10 @@
 import React from 'react'
 import Reveal from '../components/Reveal'
 import TiltCard from '../components/TiltCard'
-import { glassCard, SH } from '../utils/SectionHead'
+import { glassCard } from '../utils/utilityFunctions'
 import { COLOURS as C } from '../constants/colors'
+import SectionHead from '../components/SectionHead'
+
 const Projects = () => {
     const PROJECTS = [
         {
@@ -12,6 +14,8 @@ const Projects = () => {
             tags: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Bootstrap",],
             accent: C.em,
             year: "2025",
+            // gitHub: "",
+            liveLink: "https://civilacquire.com/"
         },
         {
             title: "LevelUp Learn",
@@ -20,6 +24,8 @@ const Projects = () => {
             tags: ["React", "Bootstrap", "Node.js", "MongoDB",],
             accent: C.cy,
             year: "2025",
+            gitHub: "https://github.com/ardra-m-siva/levelup-quiz",
+            //  liveLink: ""
         },
         {
             title: "Ludo Pixel",
@@ -28,21 +34,26 @@ const Projects = () => {
             tags: ["HTML", "JavaScript", "CSS", "JQuery"],
             accent: "#7c3aed",
             year: "2025",
+            gitHub: "https://github.com/ardra-m-siva/ludo-game-for-blind",
+            // liveLink: ""
         },
         {
             title: "Selfie Attendance System",
             emoji: <i className="fa-solid fa-map-location-dot"></i>,
             desc: "A location-aware attendance system that verifies users through QR scanning, selfie capture, and geolocation to ensure secure and accurate attendance tracking.",
-            tags: ["React", "Node.js", "MongoDB",],
+            tags: ["React", "Node.js", "MongoDB", "Express.js"],
             //  "OpenCage API"
             accent: C.amber,
             year: "2025",
+            // gitHub: "",
+            //  liveLink: ""
         },
     ];
+    
     return (
         <div id="projects" style={{ borderTop: `1px solid ${C.border}` }}>
             <section>
-                <SH label="Featured Work" title={<>Selected <span className="shimmer-em">Projects</span></>} sub="Things I've built with care" />
+                <SectionHead label="Featured Work" title={<>Selected <span className="shimmer-em">Projects</span></>} sub="Things I've built with care" />
                 <div className='grid grid-cols-2 gap-4.5'>
                     {PROJECTS.map((project, index) => (
                         <Reveal key={project.title} delay={index * .1}>
@@ -62,15 +73,25 @@ const Projects = () => {
                                     {project.tags.map(t => <span key={t} className="tag-pill">{t}</span>)}
                                 </div>
                                 <div className='flex gap-4.5 pt-4' style={{ borderTop: `1px solid ${C.border}` }}>
-                                    <a className='flex items-center font-semibold text-[13px] no-underline' href="#" style={{ color: C.em, gap: 5, transition: "gap .2s" }}
-                                        onMouseEnter={e => e.currentTarget.style.gap = "8px"} onMouseLeave={e => e.currentTarget.style.gap = "5px"}>
-                                        GitHub <i className="fa-solid fa-arrow-right-long"></i>
-                                    </a>
-                                    <a className='font-medium text-[13px] no-underline' href="#"
-                                        style={{ color: C.muted, transition: "color .2s" }}
-                                        onMouseEnter={e => e.currentTarget.style.color = C.text} onMouseLeave={e => e.currentTarget.style.color = C.muted}>
-                                        Live Demo <i className="fa-solid fa-arrow-up fa-rotate-by rotate-45 font-extralight fa-sm"></i>
-                                    </a>
+                                    {project.gitHub ?
+                                        <a className='flex items-center font-semibold text-[13px] no-underline' href={project.gitHub} style={{ color: C.em, gap: 5, transition: "gap .2s" }}
+                                            onMouseEnter={e => e.currentTarget.style.gap = "8px"} onMouseLeave={e => e.currentTarget.style.gap = "5px"}>
+                                            GitHub <i className="fa-solid fa-arrow-right-long"></i>
+                                        </a> :
+                                        <span className="text-gray-500 text-sm">
+                                            Private Repository
+                                        </span>
+                                    }
+                                    {project.liveLink ?
+                                        <a className='font-medium text-[13px] no-underline' href={project.liveLink}
+                                            style={{ color: C.muted, transition: "color .2s" }}
+                                            onMouseEnter={e => e.currentTarget.style.color = C.text} onMouseLeave={e => e.currentTarget.style.color = C.muted}>
+                                            Live Demo <i className="fa-solid fa-arrow-up fa-rotate-by rotate-45 font-extralight fa-sm"></i>
+                                        </a> : (
+                                            <span className="text-gray-500 text-sm">
+                                                Demo unavailable
+                                            </span>
+                                        )}
                                 </div>
                             </TiltCard>
                         </Reveal>
