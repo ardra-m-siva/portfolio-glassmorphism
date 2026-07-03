@@ -8,34 +8,40 @@ import SectionHead from '../components/SectionHead'
 const Timeline = () => {
     const TIMELINE = [
         {
-            type: "work", role: "Junior Full Stack Developer (MERN)", org: "Euphoricoder Pvitem. Ltd.",
-            period: "June 2025 – Present", color: C.cy,
-            description: "Delivered 5+ client sites with React & Tailwind CSS, achieving Lighthouse scores above 95.",
-            chips: ["5+ clients", "Lighthouse 95+", "On-time delivery"]
+            type: "work", role: "Junior Full Stack Developer (MERN)", org: "Euphoricoders Pvt. Ltd.",
+            location: "Malappuram, Kerala",
+            period: "June 2025 – Present", color: C.amber,
+            description: "Working on production-grade MERN applications for real users. Contributed to the CivilAquire platform, developed three web applications, built REST API endpoints and controllers, and collaborated on feature implementation and deployment.",
+            chips: ["Live Products", "Production", "Razorpay integration"]
         },
         {
             type: "work", role: "MERN Stack Developer Intern", org: "Luminar Technolab",
+            location: "Kochi, Kerala",
             period: "September 2024 – April 2025", color: C.em,
-            description: "Built scalable REST APIs, animated React UIs, and integrated Stripe & Razorpay payment gateways.",
-            chips: ["API latency ↓40%", "3 projects shipped", "OAuth & Stripe"]
+            description: "Learned full-stack web development using the MERN stack, understood real-time client-server architecture, and developed 'LevelUp Learn', a quiz platform with authentication and modern web features.",
+            chips: ["REST APIs", "Client-Server", "Redux"]
         },
         {
             type: "edu", role: "M.Sc — Computer Science", org: "University of Calicut, Kerala",
+            location: "Palakkad, Kerala",
             period: "2022 – 2024", color: C.cy,
-            description: "Coursework in DSA, web tech and software engineering. Led the Web Dev Club; final project: real-time Collab IDE.",
-            chips: ["CGPA 8.4", "Web Dev Club Lead", "Collab IDE project"]
+            description: "Strengthened knowledge in Data Structures & Algorithms, Computer Organization & Architecture, Networking, and Artificial Intelligence. Developed an innovative Ludo game designed for visually impaired users as the postgraduate project.",
+            chips: ["Advanced DSA", "AI", "Computer Architecture", "Networking"]
         },
         {
             type: "edu", role: "B.Sc — Computer Science", org: "University of Calicut, Kerala",
-            period: "2019 – 2022", color: "#7c3aed",
-            description: "Coursework in DSA, web tech and software engineering. Led the Web Dev Club; final project: real-time Collab IDE.",
-            chips: ["CGPA 8.4", "Web Dev Club Lead", "Collab IDE project"]
+            location: "Palakkad, Kerala",
+            period: "2019 – 2022", color: C.cy,
+            // z color: "#7c3aed",
+            description: "Built a strong programming foundation through C, Database Management Systems, Computer Networks, Electronics, and IoT-based application development with practical projects.",
+            chips: ["C Programming", "DBMS", "Networking", "Electronics", "IoT Project"]
         },
         {
             type: "edu", role: "Higher Secondary — Computer Science", org: "Kerala State Board",
-            period: "2017 – 2019", color: C.amber,
-            description: "Graduated with 95% aggregate, district rank in CS — and shipped my first-ever web projecitem.",
-            chips: ["95% aggregate", "District rank CS", "First web project"]
+            location: "Palakkad, Kerala",
+            period: "2017 – 2019", color: C.cy,
+            description: "Started the journey into computer science by learning programming fundamentals, HTML, and computing concepts alongside Mathematics, Physics, and Chemistry.",
+            chips: ["90% aggregate", "Programming Basics", "HTML",]
         },
     ];
 
@@ -71,7 +77,7 @@ const Timeline = () => {
                                     {/* dot */}
                                     <div className='shrink-0 pt-4.5 relative z-1'>
                                         <div className='w-11.5 h-11.5 rounded-full flex items-center justify-center text-[18px]' style={{ ...glassCard(), border: `1.5px solid ${item.color}55`, boxShadow: `0 0 20px ${item.color}33` }}>
-                                            {item.type === "edu" ? <i className="fa-solid fa-graduation-cap" style={{ color: item.color }}></i> : <i className="fa-solid fa-briefcase"></i>}
+                                            {item.type === "edu" ? <i className="fa-solid fa-graduation-cap" style={{ color: item.color }}></i> : <i className="fa-solid fa-briefcase" style={{ color: item.color }}></i>}
                                         </div>
                                         <div className='absolute -inset-1 rounded-full' style={{ border: `1px solid ${item.color}22`, animation: "pulseRing 3s ease-out infinite", animationDelay: `${index * .5}s` }} />
                                     </div>
@@ -84,6 +90,13 @@ const Timeline = () => {
                                             <div>
                                                 <h3 className='font-bold text-[16px] mb-0.75' style={{ fontFamily: "'Space Grotesk',sans-serif", color: C.text }}>{item.role}</h3>
                                                 <p className='text-[13px] font-semibold' style={{ color: item.color }}>{item.org}</p>
+                                                <div
+                                                    className="flex items-center gap-1 mt-1 text-[12px]"
+                                                    style={{ color: C.muted }}
+                                                >
+                                                    <i className="fa-solid fa-location-dot fa-xs"></i>
+                                                    <span>{item.location}</span>
+                                                </div>
                                             </div>
                                             <div className='flex shrink-0 gap-2 flex-wrap'>
                                                 <span className='rounded-full px-3 py-0.75 text-[11px]' style={{ background: "rgba(255,255,255,.04)", border: `1px solid ${C.border}`, color: C.muted, fontFamily: "'JetBrains Mono',monospace" }}>{item.period}</span>

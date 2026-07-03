@@ -12,4 +12,6 @@ export const glassCard = (accent = "transparent") => ({
 
 export const navItems = ["Home", "About", "Skills", "Projects", "Timeline", "GitHub", "Contact"];
 
+export const glassCardStyle = { ...glassCard(), border: `1px solid ${C.border}` }
+
 export const goTo = id => document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });

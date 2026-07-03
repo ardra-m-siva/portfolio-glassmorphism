@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { COLOURS as C } from '../constants/colors';
-import { glassCard } from '../utils/utilityFunctions';
+import { glassCardStyle } from '../utils/utilityFunctions';
 import Reveal from '../components/Reveal';
 import TiltCard from '../components/TiltCard';
 import { GitHubCalendar } from 'react-github-calendar';
@@ -20,7 +20,7 @@ const GitHub = () => {
         [`1000+`, "Total Contributions", <i className="fa-solid fa-chart-line"></i>,],
         ["35+", "Repositories", <i className="fa-solid fa-code-branch"></i>,],
         ["3+", "Years on GitHub", <i className="fa-brands fa-github"></i>,],
-        ["15+", "Technologies", <i className="fa-solid fa-layer-group"></i>]
+        ["10+", "Technologies", <i className="fa-solid fa-layer-group"></i>]
     ];
 
     const GITHUB_THEME = ["#0d1117", "#064e3b", "#059669", "#10b981", "#34d399"]
@@ -33,7 +33,7 @@ const GitHub = () => {
                 <Reveal delay={.1}>
                     <div className='grid grid-cols-4 gap-3.5 mb-4.5'>
                         {GITHUB_STATS.map(([value, labl, icon]) => (
-                            <TiltCard key={labl} intensity={10} style={{ ...glassCard(), border: `1px solid ${C.border}` }} className="card-hover text-center rounded-[18px] py-5 px-4">
+                            <TiltCard key={labl} intensity={10} style={glassCardStyle} className="card-hover text-center rounded-[18px] py-5 px-4">
                                 <div className='text-[24px] mb-2'>{icon}</div>
                                 <div className='font-extrabold text-[26px]' style={{ fontFamily: "'Space Grotesk',sans-serif", color: C.em }}>{value}</div>
                                 <div className='text-[12px] mt-1'>{labl}</div>
@@ -43,7 +43,7 @@ const GitHub = () => {
                 </Reveal>
 
                 <Reveal delay={.2}>
-                    <div className='p-5 md:p-7 rounded-[22px]' style={{ ...glassCard(), border: `1px solid ${C.border}` }}>
+                    <div className='p-5 md:p-7 rounded-[22px]' style={glassCardStyle}>
                         <div className='flex justify-between items-center mb-4.5 flex-wrap gap-2.5'>
                             <span className='text-[13px] text-[#94a3b8]' style={{ fontFamily: "'JetBrains Mono',monospace" }}>Contribution graph</span>
                             <div className='flex items-center gap-1.25'>

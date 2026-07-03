@@ -13,7 +13,20 @@
     backdrop-filter: blur(20px);
 }
 
-.nav-logo{
+.nav-logo {
     box-shadow: 0 0 16px rgba(16, 185, 129, .4);
     background: linear-gradient(135deg, var(--em), var(--cy));
+}
+
+.form-input {
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: inherit;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.form-input:focus{
+    border-color: var(--em);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, .1);
 }

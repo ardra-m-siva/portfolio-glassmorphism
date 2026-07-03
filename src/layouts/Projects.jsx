@@ -1,7 +1,7 @@
 import React from 'react'
 import Reveal from '../components/Reveal'
 import TiltCard from '../components/TiltCard'
-import { glassCard } from '../utils/utilityFunctions'
+import { glassCardStyle } from '../utils/utilityFunctions'
 import { COLOURS as C } from '../constants/colors'
 import SectionHead from '../components/SectionHead'
 
@@ -9,7 +9,7 @@ const Projects = () => {
     const PROJECTS = [
         {
             title: "Civil Aquire",
-            emoji: <i className="fa-solid fa-building-columns"></i>,
+            emoji: <i className="fa-solid fa-building-columns fa-sm"></i>,
             desc: "A construction services platform that streamlines project estimation, 2D/3D visualization, interior design requests, and client management through an intuitive, responsive interface.",
             tags: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Bootstrap",],
             accent: C.em,
@@ -19,7 +19,7 @@ const Projects = () => {
         },
         {
             title: "LevelUp Learn",
-            emoji: <i className="fa-solid fa-arrow-trend-up"></i>,
+            emoji: <i className="fa-solid fa-arrow-trend-up fa-sm"></i>,
             desc: "An interactive learning platform featuring gamified quizzes, progress tracking, and engaging educational experiences designed to make learning more effective.",
             tags: ["React", "Bootstrap", "Node.js", "MongoDB",],
             accent: C.cy,
@@ -29,7 +29,7 @@ const Projects = () => {
         },
         {
             title: "Ludo Pixel",
-            emoji: <i className="fa-solid fa-dice"></i>,
+            emoji: <i className="fa-solid fa-dice fa-sm"></i>,
             desc: "A responsive digital Ludo game with smooth gameplay, interactive UI, and optimized performance across desktop and mobile devices.",
             tags: ["HTML", "JavaScript", "CSS", "JQuery"],
             accent: "#7c3aed",
@@ -39,7 +39,7 @@ const Projects = () => {
         },
         {
             title: "Selfie Attendance System",
-            emoji: <i className="fa-solid fa-map-location-dot"></i>,
+            emoji: <i className="fa-solid fa-map-location-dot fa-sm"></i>,
             desc: "A location-aware attendance system that verifies users through QR scanning, selfie capture, and geolocation to ensure secure and accurate attendance tracking.",
             tags: ["React", "Node.js", "MongoDB", "Express.js"],
             //  "OpenCage API"
@@ -57,7 +57,7 @@ const Projects = () => {
                 <div className='grid grid-cols-2 gap-4.5'>
                     {PROJECTS.map((project, index) => (
                         <Reveal key={project.title} delay={index * .1}>
-                            <TiltCard intensity={10} style={{ ...glassCard(), border: `1px solid ${C.border}` }} className="card-hover h-full p-7 rounded-[22px]">
+                            <TiltCard intensity={10} style={glassCardStyle} className="card-hover h-full p-7 rounded-[22px]">
                                 <div className='absolute top-0 left-0 right-0 h-0.5' style={{ background: `linear-gradient(90deg,${project.accent},${project.accent}44,transparent)` }} />
                                 <div className='absolute -top-12.5 -right-12.5 rounded-full w-32.5 h-32.5 opacity-[0.07]' style={{ background: project.accent, filter: "blur(50px)" }} />
 

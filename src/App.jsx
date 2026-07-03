@@ -27,7 +27,7 @@ function App() {
       const sy = window.scrollY + 100;
       for (let i = navItems.length - 1; i >= 0; i--) {
         const el = document.getElementById(navItems[i].toLowerCase());
-        if (el && sy >= el.offsetTop) { setActiveNav(navItems[i]); break; }
+        if (el && sy >= el.offsetTop && activeNav !== navItems[i]) { setActiveNav(navItems[i]); break; }
       }
     };
     window.addEventListener("scroll", h, { passive: true });
@@ -37,9 +37,9 @@ function App() {
   /* ══════════ DATA ══════════ */
   const BENTO_STATS = [
     { value: "1+", label: "Years of Experience", icon: <i className="fa-regular fa-calendar"></i>, span: 1 },
-    { value: "5+", label: "Projects Shipped", icon: <i className="fa-solid fa-rocket"></i>, span: 1 },
+    { value: "3+", label: "Projects Shipped", icon: <i className="fa-solid fa-rocket"></i>, span: 1 },
     { value: "15+", label: "Technologies", icon: <i className="fa-solid fa-gear"></i>, span: 1 },
-    { value: "100+", label: "Learning Mindset", icon: <i className="fa-solid fa-book-open"></i>, span: 1 },
+    { value: "100%", label: "Learning Mindset", icon: <i className="fa-solid fa-book-open"></i>, span: 1 },
   ];
 
   /* ══════════ STAR FIELD ══════════ */
@@ -149,10 +149,10 @@ function App() {
                 </div>
 
                 {/* location badge */}
-                <div className='absolute bottom-5 left-[50%] rounded-full flex items-center whitespace-nowrap py-1.75 px-4.5 gap-2' style={{ transform: "translateX(-50%)", background: "rgba(8,12,16,.8)", backdropFilter: "blur(12px)", border: `1px solid ${C.border}`, }}>
-                  <span className='text-[14px]'><i className="fa-solid fa-map-pin text-red-400"></i></span>
+                {/* <div className='absolute bottom-5 left-[50%] rounded-full flex items-center whitespace-nowrap py-1.75 px-4.5 gap-2' style={{ transform: "translateX(-50%)", background: "rgba(8,12,16,.8)", backdropFilter: "blur(12px)", border: `1px solid ${C.border}`, }}>
+                  <span className='text-[14px]'><i className="fa-solid fa-location-crosshairs"></i></span>
                   <span className='text-[12px]' style={{ color: C.muted }}>Kerala, India</span>
-                </div>
+                </div> */}
               </TiltCard>
             </Reveal>
           </div>
