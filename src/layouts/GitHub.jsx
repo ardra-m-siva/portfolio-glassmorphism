@@ -17,7 +17,7 @@ const GitHub = () => {
     ];
 
     const GITHUB_STATS = [
-        [`1000+`, "Total Contributions", <i className="fa-solid fa-chart-line"></i>,],
+        ["1000+", "Total Contributions", <i className="fa-solid fa-arrow-trend-up"></i>,],
         ["35+", "Repositories", <i className="fa-solid fa-code-branch"></i>,],
         ["3+", "Years on GitHub", <i className="fa-brands fa-github"></i>,],
         ["10+", "Technologies", <i className="fa-solid fa-layer-group"></i>]
@@ -31,12 +31,12 @@ const GitHub = () => {
                 <SectionHead label="Open Source" title={<>GitHub <span className="shimmer-em">Contributions</span></>} sub="Consistency is key - here's a snapshot of my coding activity." />
 
                 <Reveal delay={.1}>
-                    <div className='grid grid-cols-4 gap-3.5 mb-4.5'>
-                        {GITHUB_STATS.map(([value, labl, icon]) => (
-                            <TiltCard key={labl} intensity={10} style={glassCardStyle} className="card-hover text-center rounded-[18px] py-5 px-4">
-                                <div className='text-[24px] mb-2'>{icon}</div>
+                    <div className='grid grid-cols-2 sm:grid-cols-4 gap-3.5 mb-4.5'>
+                        {GITHUB_STATS.map(([value, labl, icon], index) => (
+                            <TiltCard key={labl} intensity={10} style={glassCardStyle} className={`card-hover text-center rounded-[18px] py-5 px-4 ${index >= 2 && 'hidden sm:block'}`}>
+                                <div className='text-[24px] mb-1 md:mb-2'>{icon}</div>
                                 <div className='font-extrabold text-[26px]' style={{ fontFamily: "'Space Grotesk',sans-serif", color: C.em }}>{value}</div>
-                                <div className='text-[12px] mt-1'>{labl}</div>
+                                <div className='text-[12px] mt-1' style={{ color: C.muted }}>{labl}</div>
                             </TiltCard>
                         ))}
                     </div>

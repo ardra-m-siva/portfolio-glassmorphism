@@ -19,7 +19,7 @@ import Typewriter from './components/Typewriter';
 import { useScroll } from './hooks/useScroll';
 
 function App() {
-  const [activeNav, setActiveNav] = useState("Home");
+  const [activeNav, setActiveNav] = useState("home");
   const scrollY = useScroll();
 
   useEffect(() => {
@@ -90,17 +90,17 @@ function App() {
           HERO — BENTO GRID LAYOUT
       ═══════════════════════════════════ */}
 
-      <div id="home" className='min-h-screen flex flex-col justify-center items-center relative overflow-hidden pt-15' >
+      <div id="home" className='min-h-screen flex flex-col justify-center items-center relative overflow-hidden pt-5 sm:pt-10 md:pt-15' >
         <Stars />
         <Orbs scrollY={scrollY} />
         <GridBg scrollY={scrollY} />
 
-        <div className='relative z-1 mx-auto w-full max-w-275 pt-12 md:pr-6 pb-20'>
+        <div className='relative z-1 mx-auto w-full max-w-275 px-6 md:px-0 pt-12 md:pr-6 pb-20'>
           {/* TOP ROW — intro text + avatar bento */}
           <div className='grid mb-5 gap-5 grid-cols-1 md:grid-cols-[1fr_380px]'>
             {/* Main intro card */}
             <Reveal delay={0}>
-              <TiltCard intensity={8} style={{ ...glassCard(), border: `1px solid ${C.border}`, animation: "bentoIn .7s ease both" }} className='h-full rounded-3xl pt-11 pb-9 px-11'>
+              <TiltCard intensity={8} style={{ ...glassCard(), border: `1px solid ${C.border}`, animation: "bentoIn .7s ease both" }} className='h-full rounded-3xl pt-6 sm:pt-11 pb-4 sm:pb-9 px-6 sm:px-11'>
                 {/* scanline overlay */}
                 <div className='absolute inset-0 pointer-events-none' style={{ background: `repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.008) 2px,rgba(255,255,255,.008) 4px)`, borderRadius: "inherit" }} />
 
@@ -113,16 +113,16 @@ function App() {
                   Hi, I'm<br /><span className="shimmer-em">Ardra M S</span>
                 </h1>
 
-                <div className='min-h-8 mb-6' style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "clamp(15px,2vw,20px)", color: C.muted }}>
+                <div className='min-h-6 md:min-h-8 mb-4 sm:mb-5 md:mb-6 ' style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "clamp(15px,2vw,20px)", color: C.muted }}>
                   <span style={{ color: C.cy }}>const</span> <span style={{ color: C.em }}>dev</span> <span style={{ color: C.muted }}>=</span>{" "}
                   <span className='text-[#f1f5f9]'>"<Typewriter words={["MERN Stack Developer", "Full-Stack Developer", "React Developer", "Backend Engineer"]} />"</span>
                 </div>
 
-                <p className='text-[15px] max-w-140 leading-[1.85] mb-9' style={{ color: C.muted }}>
+                <p className='text-[15px] max-w-140 leading-[1.85] mb-5 sm:mb-9' style={{ color: C.muted }}>
                   Passionate about crafting modern web applications that balance performance, scalability, and user experience. I enjoy solving complex problems, writing maintainable code, and continuously expanding my knowledge of emerging web technologies.
                 </p>
 
-                <div className='flex flex-wrap gap-3'>
+                <div className='flex flex-wrap gap-2 md:gap-3'>
                   <button className="glow-em" onClick={() => goTo("projects")}>View My Work <i className="fa-solid fa-arrow-right"></i></button>
                   <button className="ghost-btn" onClick={() => goTo("contact")}>Let's Talk</button>
                 </div>
@@ -158,9 +158,9 @@ function App() {
           </div>
 
           {/* BOTTOM ROW — stat bento cards */}
-          <div className='grid grid-cols-4 gap-3.5'>
+          <div className='grid grid-cols-2 sm:grid-cols-4 gap-3.5'>
             {BENTO_STATS.map((stats, index) => (
-              <Reveal key={stats.label} delay={.25 + index * .07}>
+              <Reveal key={stats.label} delay={.25 + index * .07} className={index >= 2 ? 'hidden sm:block' : ''}>
                 <TiltCard intensity={10} style={{ ...glassCard(), border: `1px solid ${C.border}`, animation: `bentoIn .6s ${.3 + index * .08}s ease both` }} className="card-hover py-5 px-5.5 rounded-[18px]">
                   <div className='flex justify-between items-start mb-2'>
                     <span className='text-[22px]'>{stats.icon}</span>

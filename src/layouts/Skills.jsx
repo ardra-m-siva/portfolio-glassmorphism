@@ -31,10 +31,10 @@ const Skills = () => {
         <div id="skills" style={{ borderTop: `1px solid ${C.border}` }}>
             <section>
                 <SectionHead label="Tech Stack" title={<>My <span className="shimmer-em">Skills</span></>} sub="Technologies I use to craft powerful web applications" />
-                <div className='grid grid-cols-2 gap-4.5 mb-4.5'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-4.5 mb-4.5'>
                     {SKILLS_SECTIONS.map((section, index) => (
                         <Reveal key={section.category} delay={index * .1}>
-                            <TiltCard intensity={8} style={glassCardStyle} className="card-hover h-full p-6.5 rounded-[20px]">
+                            <TiltCard intensity={8} style={glassCardStyle} className="card-hover h-full p-5.5 sm:p-6.5 rounded-[20px]">
                                 <div className='flex items-center gap-3 mb-5'>
                                     <div className='font-bold flex items-center justify-center text-[16px] w-9.5 h-9.5 rounded-xl' style={{ background: `rgba(${section.color === C.cy ? "6,182,212" : section.color === C.em ? "16,185,129" : section.color === "#a78bfa" ? "167,139,250" : "245,158,11"},.12)`, border: `1px solid ${section.color}33`, color: section.color }}>
                                         {section.icon}

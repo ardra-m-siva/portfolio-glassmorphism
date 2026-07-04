@@ -65,8 +65,8 @@ const Contact = () => {
                                     Great ideas start with great conversations. Whether you have a project in mind, an opportunity to explore, or simply want to connect, I'd love to hear from you and see what we can build together. Available for freelance.
                                 </p>
                             </div>
-                            {CONTACT_OPTIONS.map(({ icon, label, value, url }) => (
-                                <TiltCard key={label} intensity={8} style={glassCardStyle} className="card-hover flex items-center cursor-pointer gap-3.5 py-3.5 px-4.5 rounded-2xl" onClick={() => url && window.open(url, "_blank", "noopener,noreferrer")}>
+                            {CONTACT_OPTIONS.map(({ icon, label, value, url }, index) => (
+                                <TiltCard key={label} intensity={8} style={glassCardStyle} className={`card-hover flex items-center cursor-pointer gap-2.5 md:gap-3.5 py-3 md:py-3.5 px-3.5 sm:px-4.5 rounded-2xl ${index == 0 ? 'hidden md:flex' : ''}`} onClick={() => url && window.open(url, "_blank", "noopener,noreferrer")}>
                                     <span className='text-[20px]'>{icon}</span>
                                     <div>
                                         <div className='mb-0.5 text-[11px]' style={{ color: C.muted, fontFamily: "'JetBrains Mono',monospace" }}>{label}</div>
@@ -76,9 +76,9 @@ const Contact = () => {
                             ))}
                         </div>
                     </Reveal>
-
+                    {/* form */}
                     <Reveal delay={.2}>
-                        <div className='h-full rounded-[22px] p-6 sm:p-8' style={glassCardStyle}>
+                        <div className='h-full rounded-[22px] p-5 sm:p-6 md:p-8' style={glassCardStyle}>
                             <div className='absolute top-0 left-0 right-0 h-0.5' style={{ background: `linear-gradient(90deg,${C.em},${C.cy},transparent)` }} />
                             <div className='flex flex-col gap-4'>
                                 <div className='grid grid-cols-2 gap-3.5'>
@@ -98,7 +98,7 @@ const Contact = () => {
                                 </div>
                                 {[["Subject", "Project inquiry · collaboration · just hello"], ["Message", ""]].map(([field, placeHolder]) => (
                                     <div key={field}>
-                                        <label id={field.toLowerCase()} className='block text-[11px] tracking-[0.5px] rounded-[7px] mb-1.75' style={{ color: C.muted, fontFamily: "'JetBrains Mono',monospace" }}>{field}</label>
+                                        <label id={field.toLowerCase()} className='block text-[11px] tracking-[0.5px] rounded-[7px] mb-1.75 uppercase' style={{ color: C.muted, fontFamily: "'JetBrains Mono',monospace" }}>{field}</label>
                                         {field === "Message"
                                             ? <>
                                                 <textarea {...register('message')} className='w-full rounded-xl py-2.75 px-3.5 text-[14px] outline-none resize-none form-input' rows={5} placeholder="Tell me about your project or idea..."
