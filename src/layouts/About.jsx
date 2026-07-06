@@ -10,7 +10,7 @@ const About = () => {
     const ABOUT_CARDS = [
         { icon: <i className="fa-solid fa-earth-americas"></i>, title: "Tech Stack", value: "MERN · TypeScript", accent: C.amber },
         { icon: <i className="fa-solid fa-graduation-cap"></i>, title: "Education", value: "M.Sc Computer Science", accent: C.cy },
-        { icon: <i className="fa-solid fa-briefcase"></i>, title: "Availability", value: "Open to Work", accent: "#a78bfa" },
+        { icon: <i className="fa-solid fa-briefcase"></i>, title: "Current Role", value: "Jr. Full-Stack Developer", accent: "#a78bfa" },
         { icon: <i className="fa-solid fa-location-dot"></i>, title: "Based In", value: "Kerala, India", accent: C.em },
     ];
 

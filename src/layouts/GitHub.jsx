@@ -20,7 +20,7 @@ const GitHub = () => {
         ["1000+", "Total Contributions", <i className="fa-solid fa-arrow-trend-up"></i>,],
         ["35+", "Repositories", <i className="fa-solid fa-code-branch"></i>,],
         ["3+", "Years on GitHub", <i className="fa-brands fa-github"></i>,],
-        ["10+", "Technologies", <i className="fa-solid fa-layer-group"></i>]
+        ["10+", "Technologies", <i className="fa-solid fa-gears"></i>]
     ];
 
     const GITHUB_THEME = ["#0d1117", "#064e3b", "#059669", "#10b981", "#34d399"]

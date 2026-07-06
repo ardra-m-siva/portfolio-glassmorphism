@@ -9,19 +9,19 @@ const Skills = () => {
     const SKILLS_SECTIONS = [
         {
             category: "Frontend", icon: "◈", color: C.cy,
-            skillList: ["React.js", "JavaScript", "Tailwind CSS", "Redux", "Zustand", "HTML5", "CSS3", "Boostrap", "SASS"]
+            skillList: ["HTML5", "CSS3", "JavaScript (ES6+)", "React.js", "Tailwind CSS", "Boostrap", "Redux", "SASS", "Zustand", "Context API"]
         },
         {
-            category: "Backend", icon: "◉", color: C.em,
-            skillList: ["Node.js", "Express.js", "REST APIs", "JWT", "Socket.io", "Open API"]
+            category: "Backend", icon: "◆", color: C.em,
+            skillList: ["Node.js", "Express.js", "REST APIs", "JWT Authentication", "MVC Architecture"]
         },
         {
             category: "Database", icon: "◎", color: "#a78bfa",
             skillList: ["MongoDB", "MySQL", "Mongoose", "Aggregations"]
         },
         {
-            category: "DevOps & Tools", icon: "◆", color: C.amber,
-            skillList: ["Git", "Vercel", "Postman", "Figma", "Lighthouse", "Vite"]
+            category: "DevOps & Tools", icon: "◉", color: C.amber,
+            skillList: ["Git", "GitHub", "Vercel", "Netlify", "Postman", "Figma", "Lighthouse", "Vite", "Open API","VS Code"]
         },
     ];
 

@@ -36,10 +36,10 @@ function App() {
 
   /* ══════════ DATA ══════════ */
   const BENTO_STATS = [
-    { value: "1+", label: "Years of Experience", icon: <i className="fa-regular fa-calendar"></i>, span: 1 },
-    { value: "3+", label: "Projects Shipped", icon: <i className="fa-solid fa-rocket"></i>, span: 1 },
-    { value: "15+", label: "Technologies", icon: <i className="fa-solid fa-gear"></i>, span: 1 },
-    { value: "100%", label: "Learning Mindset", icon: <i className="fa-solid fa-book-open"></i>, span: 1 },
+    { value: "1+", label: "Years of Experience", icon: <i className="fa-regular fa-calendar fa-sm"></i>, span: 1 },
+    { value: "3+", label: "Projects Shipped", icon: <i className="fa-solid fa-rocket  fa-sm"></i>, span: 1 },
+    { value: "10+", label: "Technologies", icon: <i className="fa-solid fa-gear  fa-sm"></i>, span: 1 },
+    { value: "100%", label: "Learning Mindset", icon: <i className="fa-solid fa-book-open  fa-sm"></i>, span: 1 },
   ];
 
   /* ══════════ STAR FIELD ══════════ */
@@ -158,10 +158,10 @@ function App() {
           </div>
 
           {/* BOTTOM ROW — stat bento cards */}
-          <div className='grid grid-cols-2 sm:grid-cols-4 gap-3.5'>
+          <div className='grid grid-cols-2 sm:grid-cols-4 gap-3.5 auto-rows-fr'>
             {BENTO_STATS.map((stats, index) => (
-              <Reveal key={stats.label} delay={.25 + index * .07} className={index >= 2 ? 'hidden sm:block' : ''}>
-                <TiltCard intensity={10} style={{ ...glassCard(), border: `1px solid ${C.border}`, animation: `bentoIn .6s ${.3 + index * .08}s ease both` }} className="card-hover py-5 px-5.5 rounded-[18px]">
+              <Reveal key={stats.label} delay={.25 + index * .07} className={`${index >= 2 ? 'hidden sm:block' : ''} h-full`}>
+                <TiltCard intensity={10} style={{ ...glassCard(), border: `1px solid ${C.border}`, animation: `bentoIn .6s ${.3 + index * .08}s ease both` }} className="card-hover py-5 px-5.5 rounded-[18px] h-full">
                   <div className='flex justify-between items-start mb-2'>
                     <span className='text-[22px]'>{stats.icon}</span>
                     <div className='w-1.5 h-1.5 rounded-full opacity-60' style={{ background: C.em, }} />
