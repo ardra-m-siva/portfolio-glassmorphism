@@ -95,12 +95,12 @@ function App() {
         <Orbs scrollY={scrollY} />
         <GridBg scrollY={scrollY} />
 
-        <div className='relative z-1 mx-auto w-full max-w-275 px-6 md:px-0 pt-12 md:pr-6 pb-20'>
+        <div className='relative z-1 mx-auto w-full max-w-275 px-6 pt-12 md:px-6 pb-15 sm:pb-20'>
           {/* TOP ROW — intro text + avatar bento */}
           <div className='grid mb-5 gap-5 grid-cols-1 md:grid-cols-[1fr_380px]'>
             {/* Main intro card */}
             <Reveal delay={0}>
-              <TiltCard intensity={8} style={{ ...glassCard(), border: `1px solid ${C.border}`, animation: "bentoIn .7s ease both" }} className='h-full rounded-3xl pt-6 sm:pt-11 pb-4 sm:pb-9 px-6 sm:px-11'>
+              <TiltCard intensity={8} style={{ ...glassCard(), border: `1px solid ${C.border}`, animation: "bentoIn .7s ease both" }} className='h-full rounded-3xl pt-6 sm:pt-11 pb-4 sm:pb-9 px-6 sm:px-8 md:px-9 lg:px-11'>
                 {/* scanline overlay */}
                 <div className='absolute inset-0 pointer-events-none' style={{ background: `repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.008) 2px,rgba(255,255,255,.008) 4px)`, borderRadius: "inherit" }} />
 
@@ -113,9 +113,11 @@ function App() {
                   Hi, I'm<br /><span className="shimmer-em">Ardra M S</span>
                 </h1>
 
-                <div className='min-h-6 md:min-h-8 mb-4 sm:mb-5 md:mb-6 ' style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "clamp(15px,2vw,20px)", color: C.muted }}>
-                  <span style={{ color: C.cy }}>const</span> <span style={{ color: C.em }}>dev</span> <span style={{ color: C.muted }}>=</span>{" "}
-                  <span className='text-[#f1f5f9]'>"<Typewriter words={["MERN Stack Developer", "Full-Stack Developer", "React Developer", "Backend Engineer"]} />"</span>
+                <div className='min-h-6 md:min-h-8 mb-4 sm:mb-5 md:mb-6 text-[clamp(15px,2vw,20px)] flex gap-x-2 ms:gap-x-3 flex-wrap' style={{ fontFamily: "'JetBrains Mono',monospace" }}>
+                    <span className='hidden sm:block' style={{ color: C.cy }}>let</span>
+                    <span style={{ color: C.em }}>role</span>
+                    <span style={{ color: C.muted }}>=</span>
+                    <span className='text-slate-100'>"<Typewriter words={["MERN Stack Developer", "Full-Stack Developer", "React Developer", "Backend Engineer"]} />"</span>
                 </div>
 
                 <p className='text-[15px] max-w-140 leading-[1.85] mb-5 sm:mb-9' style={{ color: C.muted }}>
@@ -123,8 +125,8 @@ function App() {
                 </p>
 
                 <div className='flex flex-wrap gap-2 md:gap-3'>
-                  <button className="glow-em" onClick={() => goTo("projects")}>View My Work <i className="fa-solid fa-arrow-right"></i></button>
-                  <button className="ghost-btn" onClick={() => goTo("contact")}>Let's Talk</button>
+                  <button className="glow-em py-3 px-6.5 md:py-3.25 md:px-7.5" onClick={() => goTo("projects")}>View My Work <i className="fa-solid fa-arrow-right"></i></button>
+                  <button className="ghost-btn py-2.75 px-6 md:py-3 md:px-7" onClick={() => goTo("contact")}>Let's Talk</button>
                 </div>
               </TiltCard>
             </Reveal>
@@ -161,7 +163,7 @@ function App() {
           <div className='grid grid-cols-2 sm:grid-cols-4 gap-3.5 auto-rows-fr'>
             {BENTO_STATS.map((stats, index) => (
               <Reveal key={stats.label} delay={.25 + index * .07} className={`${index >= 2 ? 'hidden sm:block' : ''} h-full`}>
-                <TiltCard intensity={10} style={{ ...glassCard(), border: `1px solid ${C.border}`, animation: `bentoIn .6s ${.3 + index * .08}s ease both` }} className="card-hover py-5 px-5.5 rounded-[18px] h-full">
+                <TiltCard intensity={10} style={{ ...glassCard(), border: `1px solid ${C.border}`, animation: `bentoIn .6s ${.3 + index * .08}s ease both` }} className="card-hover py-4 sm:py-5 px-4.5 sm:px-5.5 rounded-[18px] h-full">
                   <div className='flex justify-between items-start mb-2'>
                     <span className='text-[22px]'>{stats.icon}</span>
                     <div className='w-1.5 h-1.5 rounded-full opacity-60' style={{ background: C.em, }} />
@@ -175,7 +177,7 @@ function App() {
         </div>
 
         {/* scroll hint */}
-        <div className='absolute left-1/2 bottom-3 flex flex-col items-center z-1 -translate-x-1/2 gap-1.5 '>
+        <div className='hidden md:flex absolute left-1/2 bottom-3 flex-col items-center z-1 -translate-x-1/2 gap-1.5 '>
           <span className='text-[10px] tracking-[3px]' style={{ fontFamily: "'JetBrains Mono',monospace", color: C.muted }}>scroll</span>
           <div className='h-10 w-px animate-[orbFloat_1.5s_ease-in-out_infinite_alternate]' style={{ background: `linear-gradient(to bottom,${C.em},transparent)` }} />
         </div>

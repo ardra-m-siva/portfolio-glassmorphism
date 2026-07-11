@@ -11,17 +11,17 @@ const Projects = () => {
             title: "Civil Aquire",
             emoji: <i className="fa-solid fa-building-columns fa-sm"></i>,
             desc: "A construction services platform that streamlines project estimation, 2D/3D visualization, interior design requests, and client management through an intuitive, responsive interface.",
-            tags: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Bootstrap",],
+            tags: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Bootstrap",],
             accent: C.em,
-            year: "2025",
+            year: "2026",
             // gitHub: "",
-            liveLink: "https://civilacquire.com/"
+            liveLink: "https://civilacquire.com/",
         },
         {
             title: "LevelUp Learn",
             emoji: <i className="fa-solid fa-arrow-up-right-dots fa-sm"></i>,
-            desc: "An interactive learning platform featuring gamified quizzes, progress tracking, and engaging educational experiences designed to make learning more effective.",
-            tags: ["React", "Bootstrap", "Node.js", "MongoDB",],
+            desc: "An interactive learning platform featuring gamified quizzes and structured learning paths. Track your progress with performance insights and achievement- based rewards. Designed to make learning engaging, effective, and enjoyable.",
+            tags: ["React", "Bootstrap", "Node.js", "MongoDB","Highcharts"],
             accent: C.cy,
             year: "2025",
             gitHub: "https://github.com/ardra-m-siva/levelup-quiz",
@@ -30,22 +30,22 @@ const Projects = () => {
         {
             title: "Ludo Pixel",
             emoji: <i className="fa-solid fa-dice fa-sm"></i>,
-            desc: "A responsive digital Ludo game with smooth gameplay, interactive UI, and optimized performance across desktop and mobile devices.",
-            tags: ["HTML", "JavaScript", "CSS", "JQuery"],
+            desc: "A responsive digital Ludo game with smooth gameplay and an interactive user interface. Optimized for seamless performance across desktop and mobile devices.     Designed to deliver an engaging and accessible multiplayer gaming experience.",
+            tags: ["HTML", "CSS", "JavaScript",  "JQuery"],
             accent: "#7c3aed",
             year: "2025",
             gitHub: "https://github.com/ardra-m-siva/ludo-game-for-blind",
             // liveLink: ""
         },
         {
-            title: "Selfie Attendance System",
-            emoji: <i className="fa-solid fa-map-location-dot fa-sm"></i>,
-            desc: "A location-aware attendance system that verifies users through QR scanning, selfie capture, and geolocation to ensure secure and accurate attendance tracking.",
-            tags: ["React", "Node.js", "MongoDB", "Express.js"],
+            title: "Developer Portfolio",
+            emoji: <i className="fa-solid fa-laptop-code"></i>,
+            desc: "A modern developer portfolio showcasing projects, skills, and experience. Built with a responsive glassmorphism UI and smooth animations. Optimized for performance, accessibility, and SEO.",
+            tags: ["React", "Tailwind CSS", "React Hook Form", "Zod", "GitHub API"],
             //  "OpenCage API"
             accent: C.amber,
             year: "2025",
-            // gitHub: "",
+            gitHub: "https://github.com/ardra-m-siva/portfolio-glassmorphism",
             //  liveLink: ""
         },
     ];
@@ -61,18 +61,18 @@ const Projects = () => {
                                 <div className='absolute top-0 left-0 right-0 h-0.5' style={{ background: `linear-gradient(90deg,${project.accent},${project.accent}44,transparent)` }} />
                                 <div className='absolute -top-12.5 -right-12.5 rounded-full w-32.5 h-32.5 opacity-[0.07]' style={{ background: project.accent, filter: "blur(50px)" }} />
 
-                                <div className='flex justify-between items-start mb-3.5'>
-                                    <span className='text-[36px]' style={{ color: project.accent }}>{project.emoji}</span>
-                                    <div className='flex items-center gap-1.5 rounded-full py-1 px-3' style={{ background: "rgba(255,255,255,.04)" }}>
+                                <div className='flex justify-between items-start mb-3 sm:mb-3.5'>
+                                    <span className='text-[32px] sm:text-[36px]' style={{ color: project.accent }}>{project.emoji}</span>
+                                    <div className='flex items-center rounded-full py-1 px-3' style={{ background: "rgba(255,255,255,.04)" }}>
                                         <span className='text-[11px]' style={{ fontFamily: "'JetBrains Mono',monospace", color: C.muted }}>{project.year}</span>
                                     </div>
                                 </div>
-                                <h3 className='text-[20px] font-extrabold mb-2.5' style={{ fontFamily: "'Space Grotesk',sans-serif", color: C.text }}>{project.title}</h3>
-                                <p className='text-[13.5px] leading-[1.8] mb-4.5 ' style={{ color: C.muted }}>{project.desc}</p>
-                                <div className='flex flex-wrap gap-1.75 mb-5.5'>
+                                <h3 className='text-[20px] font-extrabold mb-2 sm:mb-2.5' style={{ fontFamily: "'Space Grotesk',sans-serif", color: C.text }}>{project.title}</h3>
+                                <p className='text-[13.5px] leading-[1.8] mb-4 sm:mb-4.5' style={{ color: C.muted }}>{project.desc}</p>
+                                <div className='flex flex-wrap gap-1.5 sm:gap-1.75 mb-4 sm:mb-5.5'>
                                     {project.tags.map(t => <span key={t} className="tag-pill">{t}</span>)}
                                 </div>
-                                <div className='flex gap-4.5 pt-4' style={{ borderTop: `1px solid ${C.border}` }}>
+                                <div className='flex flex-wrap justify-between sm:justify-start gap-4.5 pt-4' style={{ borderTop: `1px solid ${C.border}` }}>
                                     {project.gitHub ?
                                         <a className='flex items-center font-semibold text-[13px] no-underline' href={project.gitHub} style={{ color: C.em, gap: 5, transition: "gap .2s" }}
                                             onMouseEnter={e => e.currentTarget.style.gap = "8px"} onMouseLeave={e => e.currentTarget.style.gap = "5px"}>

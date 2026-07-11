@@ -16,9 +16,9 @@ const About = () => {
 
     const ABOUT_HIGHLIGHTS = [
         "Problem Solving",
-        "Scalable Architecture",
         "Clean Code",
         "Responsive Design",
+        "Scalable Architecture",
     ];
 
 
@@ -42,10 +42,10 @@ const About = () => {
                             </p>
                             <div className='mb-7 flex gap-2.5 flex-wrap'>
                                 {ABOUT_HIGHLIGHTS.map(highlight => (
-                                    <span className='text-[12px] py-1.25 px-3.5 rounded-full font-medium' key={highlight} style={{ ...{}, background: C.emSoft, border: `1px solid rgba(16,185,129,.2)`, color: C.em }}>{highlight}</span>
+                                    <span className='text-[12px] py-1.25 px-3.5 rounded-full font-medium' key={highlight} style={{ ...glassCardStyle, background: C.emSoft, border: `1px solid rgba(16,185,129,.2)`, color: C.em }}>{highlight}</span>
                                 ))}
                             </div>
-                            <button onClick={() => window.open(Resume, "_BLANK")} className="glow-em">View Resume <i className="fa-solid fa-arrow-up-right-from-square  "></i></button>
+                            <button onClick={() => window.open(Resume, "_BLANK")} className="glow-em py-3.25 px-7.5">View Resume <i className="fa-solid fa-arrow-up-right-from-square  "></i></button>
                             {/* transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 */}
                         </TiltCard>
                     </Reveal>

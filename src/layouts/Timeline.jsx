@@ -59,9 +59,9 @@ const Timeline = () => {
                 <Reveal>
                     <div className='flex flex-wrap gap-3 mb-8 md:mb-11'>
                         {TIMELINE_LEGEND.map(([icon, label, bg, borderColor, textColour]) => (
-                            <div key={label} className='flex items-center gap-1.75 rounded-full py-1.25 px-4 z-1' style={{ background: bg, border: `1px solid ${borderColor}` }}>
-                                <span className='text-[13px]' style={{ color: textColour }}>{icon}</span>
-                                <span className='font-semibold text-[12px]' style={{ color: textColour }}>{label}</span>
+                            <div key={label} className='flex items-center gap-1.75 rounded-full py-1.25 px-4 z-1' style={{ background: bg, border: `1px solid ${borderColor}`, color: textColour }}>
+                                <span className='text-[13px]'>{icon}</span>
+                                <span className='font-semibold text-[12px]'>{label}</span>
                             </div>
                         ))}
                     </div>
@@ -77,14 +77,14 @@ const Timeline = () => {
                                 <div className='flex gap-4 sm:gap-6'>
                                     {/* dot */}
                                     <div className='hidden sm:block shrink-0 pt-3.5 sm:pt-4.5 relative z-1'>
-                                        <div className='w-11.5 h-11.5 rounded-full flex items-center justify-center text-[18px]' style={{ ...glassCard(), border: `1.5px solid ${item.color}55`, boxShadow: `0 0 20px ${item.color}33` }}>
-                                            {item.type === "edu" ? <i className="fa-solid fa-graduation-cap fa-sm" style={{ color: item.color }}></i> : <i className="fa-solid fa-briefcase fa-sm" style={{ color: item.color }}></i>}
+                                        <div className='w-11.5 h-11.5 rounded-full flex items-center justify-center text-[18px]' style={{ ...glassCard(), border: `1.5px solid ${item.color}55`, boxShadow: `0 0 20px ${item.color}33`, color: item.color }}>
+                                            {item.type === "edu" ? <i className="fa-solid fa-graduation-cap fa-sm"></i> : <i className="fa-solid fa-briefcase fa-sm"></i>}
                                         </div>
                                         <div className='absolute -inset-1 rounded-full' style={{ border: `1px solid ${item.color}22`, animation: "pulseRing 3s ease-out infinite", animationDelay: `${index * .5}s` }} />
                                     </div>
 
                                     {/* card */}
-                                    <TiltCard intensity={6} style={{ flex: 1, ...glassCard(), border: `1px solid ${C.border}`, borderLeft: `3px solid ${item.color}44` }} className="card-hover p-5 sm:p-6 rounded-[20px]">
+                                    <TiltCard intensity={6} style={{ ...glassCard(), border: `1px solid ${C.border}`, borderLeft: `3px solid ${item.color}44` }} className="card-hover p-5 sm:p-6 rounded-[20px] flex-1">
                                         <div className='absolute -top-7.5 -right-7.5 w-[15] h-[15] sm:w-[20] sm:h-[20] rounded-full opacity-6' style={{ background: item.color, filter: "blur(35px)" }} />
 
                                         <div className='flex justify-between items-start flex-wrap gap-2 mb-1.5 '>
@@ -109,7 +109,7 @@ const Timeline = () => {
                                         <div className='flex flex-wrap gap-2'>
                                             {item.chips.map(c => (
                                                 <span key={c} className="chip" style={{ background: `${item.color}10`, border: `1px solid ${item.color}28`, color: item.color }}>
-                                                    <span style={{ fontSize: 10 }}>✓</span>{c}
+                                                    <span className='text-[10px]'>✓</span>{c}
                                                 </span>
                                             ))}
                                         </div>

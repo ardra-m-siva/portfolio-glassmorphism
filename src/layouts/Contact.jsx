@@ -121,7 +121,7 @@ const Contact = () => {
                                             }
                                         </div>
                                     ))}
-                                    <button disabled={isSubmitting} onClick={handleSubmit(handleSubmitOfMessage)} className="glow-em w-full mt-1 flex items-center gap-1 justify-center ">
+                                    <button disabled={isSubmitting} onClick={handleSubmit(handleSubmitOfMessage)} className="glow-em py-3.25 px-7.5 w-full mt-1 flex items-center gap-1 justify-center ">
                                         Send Message{isSubmitting ?
                                             <div className="flex items-center justify-center">
                                                 <div className="w-4 h-4 border-2 border-gray-300 border-t-emerald-500 rounded-full animate-spin"></div>
